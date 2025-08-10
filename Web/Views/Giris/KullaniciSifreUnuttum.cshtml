@@ -1,0 +1,48 @@
+﻿@using Web.Models.KullaniciGiris
+@model SifreUnuttum
+@{
+    Layout = "~/Views/Shared/_LayoutGiris.cshtml";
+}
+
+<section id="sifre-unuttum-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-sm-10 col-md-7 col-lg-6 col-xl-5 col-xxl-4">
+                <div class="card rounded-0 border-0 p-5">
+                    <div class="form-content p-0">
+                        <h4 class="text-center text-white fw-bold mb-4">Şifreni Değiştir</h4>
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <form asp-controller="Giris" asp-action="KullaniciSifreUnuttum" class="degistirme-form" method="post">
+                            <div class="mb-2">
+                                <label class="tc-input form-label text-white">TC Kimlik Numarası</label>
+                                <input asp-for="TC" type="text" class="w-100 p-1 border-0" />
+                                <span asp-validation-for="TC" class="text-danger"></span>
+                            </div>
+                            <label class="sifre-input form-label text-white">Şifre</label>
+                            <div class="mb-3 position-relative">
+                                <input asp-for="YeniSifre" type="password" class="w-100 p-1 border-0" />
+                                <button type="button" class="btn btn-link position-absolute end-0 top-0 d-flex mt-1 me-2 text-decoration-none">
+                                    <i class="fa-solid fa-eye" style="color: #6b6b6b;"></i>
+                                </button>
+                                <span asp-validation-for="YeniSifre" class="text-danger"></span>
+                            </div>
+                            <label class="sifre-input form-label text-white">Şifre Tekrar</label>
+                            <div class="mb-3 position-relative">
+                                <input asp-for="SifreTekrar" type="password" class="w-100 p-1 border-0" />
+                                <button type="button" class="btn btn-link position-absolute end-0 top-0 d-flex mt-1 me-2 text-decoration-none">
+                                    <i class="fa-solid fa-eye" style="color: #6b6b6b;"></i>
+                                </button>
+                                <span asp-validation-for="SifreTekrar" class="text-danger"></span>
+                            </div>
+                            <button type="submit" class="btn-kaydet btn w-100 mb-3 mt-2 rounded-0">Kaydet</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+} 

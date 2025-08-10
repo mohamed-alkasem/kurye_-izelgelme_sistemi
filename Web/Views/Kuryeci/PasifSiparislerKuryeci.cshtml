@@ -1,0 +1,37 @@
+﻿@using Domain.Entities
+@model List<Kurye>
+@{
+    Layout = "~/Views/Shared/_LayoutKuryeci.cshtml";
+}
+
+<section id="siparisler-kurye-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-10 col-lg-8 col-xl-7">
+                @if (Model.Count != 0)
+                {
+                    <h2 class="text-center fw-bold mb-3">Siparişler</h2>
+                    <hr />
+                    @foreach (var kurye in Model)
+                    {
+                        <div class="siparis d-flex flex-column bg-light mb-3 rounded p-3">
+                            <div class="d-flex justify-content-between">
+                                <p class="mb-0"> Ad ve Soyad: <span>@kurye.AdSoyad</span></p>
+                                <div>Tarih: <span>@kurye.SiparisTarihi.ToString("dd.MM.yyyy")</span></div>
+                            </div>
+                            <hr>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <p class="mb-0">Telefon No: <span>@kurye.Tel</span></p>
+                                <a class="btn-detay btn btn-secondary" href="/Kuryeci/SiparisDetay?kuryeId=@kurye.Id">Detay</a>
+                            </div>
+                        </div>
+                    }
+                }
+                else
+                {
+                    <h5 class="mb-0 py-5">Sistemde henüz size ait herhangi bir sipariş kaydı bulunmamaktadır.</h5>
+                }
+            </div>
+        </div>
+    </div>
+</section>

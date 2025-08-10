@@ -1,0 +1,53 @@
+#profil-section {
+    padding: 100px 0;
+}
+
+#profil-section .img-cont {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 2px solid;
+    position: relative;
+}
+
+#profil-section .img-cont img {
+    width: 100%;
+    height: 100%;
+    object-fit : cover;
+    border-radius: 50%;
+}
+
+#profil-section .edit-icon {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: black;
+    border: 2px solid #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+}
+
+#profil-section .edit-icon input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+
+#profil-section input {
+    outline: 0;
+    border: 0;
+    box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+#profil-section form {
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.1);
+}

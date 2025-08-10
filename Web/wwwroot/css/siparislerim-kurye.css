@@ -1,0 +1,13 @@
+#siparisler-kurye-section {
+    padding: 70px 0;
+}
+
+#siparisler-kurye-section h2 {
+    font-family: "Jockey One", sans-serif;
+    font-size: calc(2rem + 1vw);
+    letter-spacing: 1px;
+}
+
+#siparisler-kurye-section .siparis {
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.1);
+}

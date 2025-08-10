@@ -1,0 +1,30 @@
+﻿@using Domain.Entities
+@model List<Kuryeci>
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<section id="istekler-admin-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-10 col-lg-8 col-xl-7">
+                <h2 class="text-center fw-bold mb-3">Kuryeci Listesi</h2>
+                <hr />
+                @foreach (var kuryeci in Model)
+                {
+                    <div class="istek d-flex flex-column bg-light mb-3 rounded p-3">
+                        <div class="d-flex justify-content-between">
+                            <p class="mb-0">Kuryeci Adı: <span>@kuryeci.AdSoyad</span></p>
+                            <div>Kabul Tarih: <span>@kuryeci.KabulTarihi.ToString("dd.MM.yyyy")</span></div>
+                        </div>
+                        <hr>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>E-posta: <span>@kuryeci.Eposta</span></div>
+                            <a class="btn-detay btn btn-secondary" href="/Admin/KabulKuryeciDetay?kuryeciId=@kuryeci.Id">Detay</a>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,47 @@
+#aktif-kurye-section {
+    padding: 70px 0;
+}
+
+#aktif-kurye-section h2 {
+    font-family: "Jockey One", sans-serif;
+    font-size: calc(2rem + 1vw);
+    letter-spacing: 1px;
+}
+
+#aktif-kurye-section .kurye {
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.1);
+}
+
+#aktif-kurye-section .avatar-cont {
+    width: 80px !important;
+    height: 80px !important;
+    border-radius: 50% !important;
+    border : 1px solid #eee;
+}
+#aktif-kurye-section .avatar-cont img{
+    width: 80px !important;
+    height: 80px !important;
+    border-radius: 50% !important;
+    object-fit: cover;
+}
+
+#aktif-kurye-section .avatar-cont::before {
+    content: "";
+    background-color: var(--primary-color);
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+    right: 0px;
+}
+
+#aktif-kurye-section .btn-cagir {
+    background-color: var(--primary-color) !important;
+    color: white !important;
+    transition: var(--transition);
+}
+
+#aktif-kurye-section .btn-cagir:hover {
+    background-color: black !important;
+}

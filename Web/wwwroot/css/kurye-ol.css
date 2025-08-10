@@ -1,0 +1,96 @@
+#kuryeOl-main-section {
+    background-color: black;
+    font-family: "Jockey One", sans-serif;
+}
+
+#kuryeOl-main-section .main-title {
+    font-size: calc(2rem + 2vw);
+}
+
+#kuryeOl-main-section .main-title span {
+    color: var(--primary-color);
+}
+
+#kuryeOl-main-section .kuryeci-img {
+    width: calc(300px + 8vw);
+}
+
+#kuryeOl-main-section .btn-ara {
+    background-color: var(--primary-color);
+    color: white;
+    width: fit-content;
+}
+
+#kuryeOl-main-section .btn-ara:hover {
+    background-color: white;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+}
+
+#kuryeOl-form-section .bilgiler input,
+#kuryeOl-form-section .dropdown .btn {
+    width: 100%;
+    padding: 10px;
+    border-radius: 0;
+    border: 1px solid black !important;
+    outline: 0;
+}
+
+#kuryeOl-form-section form .dropdown .btn:hover {
+    border: 1px solid;
+}
+
+#kuryeOl-form-section .dropdown-menu {
+    border-radius: 0;
+    border: 1px solid black !important;
+}
+
+#kuryeOl-form-section .form-control:focus {
+    box-shadow: none !important;
+    border-color: #ced4da;
+}
+
+#kuryeOl-form-section .dropdown-menu li:not(:last-child) {
+    border-bottom: 1px solid #eee;
+}
+
+#kuryeOl-form-section .dropdown-item {
+    color: gray;
+    padding: 10px 15px;
+}
+
+#kuryeOl-form-section .dropdown-item:hover {
+    background-color: #eee;
+    color: black;
+}
+
+#kuryeOl-form-section .ehliyet-secim label {
+    font-size: 1.2rem;
+}
+
+#kuryeOl-form-section .ehliyet-secim .s:hover * {
+    cursor: pointer !important;
+}
+
+#kuryeOl-form-section .btn-gonder {
+    background-color: var(--primary-color);
+    width: fit-content;
+}
+
+#kuryeOl-form-section .btn-gonder:hover {
+        background-color: black !important;
+}
+#kuryeOl-form-section .form-select:focus {
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+    border-color: #86b7fe;
+}
+
+#kuryeOl-form-section .form-select:not(:placeholder-shown):focus {
+    box-shadow: none;
+    border-color: #ced4da;
+}
+
+#kuryeOl-form-section .form-check-input:checked {
+    background-color: green;
+    box-shadow: none !important;
+}

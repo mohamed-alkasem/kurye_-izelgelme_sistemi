@@ -1,0 +1,28 @@
+#istek-detay-section {
+    padding: 70px 0;
+}
+
+#istek-detay-section .siparis {
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.1);
+}
+
+@media(min-width:577px) {
+    #istek-detay-section label {
+        width: 160px;
+        margin-right: 5px;
+    }
+}
+
+#istek-detay-section input {
+    outline: 0;
+    color: gray;
+}
+
+#istek-detay-section :where(.btn-onayla, .btn-reddet) {
+    width: fit-content;
+    transition: var(--transition);
+}
+
+#istek-detay-section .gun {
+    width: 120px;
+}

@@ -1,0 +1,84 @@
+﻿@using Application.DTOs
+@model List<SiparislerKullaniciListDto>
+
+@{
+    List<SiparislerKullaniciListDto> hazırlananSiparisler = new List<SiparislerKullaniciListDto>();
+    List<SiparislerKullaniciListDto> teslimEdilenSiparisler = new List<SiparislerKullaniciListDto>();
+    List<SiparislerKullaniciListDto> onaylanmamisSiparisler = new List<SiparislerKullaniciListDto>();
+    foreach (var kurye in Model)
+    {
+        if (kurye.KuryeDurum == "Aktif" && kurye.KuryeTeslimDurumu == "Teslim Edilmedi") hazırlananSiparisler.Add(kurye);
+        else if (kurye.KuryeDurum == "Aktif" && kurye.KuryeTeslimDurumu == "Teslim Edildi") teslimEdilenSiparisler.Add(kurye);
+        else if (kurye.KuryeDurum == "Pasif") onaylanmamisSiparisler.Add(kurye);
+    }
+}
+
+<section id="siparisler-kullanici-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-10 col-lg-8 col-xl-7">
+                @if (hazırlananSiparisler.Count != 0)
+                {
+                    <h2 class="text-center fw-bold mb-3">Hazırlanan Siparişler</h2>
+                    <hr />
+                    @foreach (var kurye in hazırlananSiparisler)
+                    {
+                        <div class="siparis d-flex flex-column bg-light mb-3 rounded p-3">
+                            <div class="d-flex justify-content-between">
+                                <p class="mb-0">Kuryecinin Telefon Numarası: <span>@kurye.KuryeciTel</span></p>
+                            </div>
+                            <hr>
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div>Durumu: Sipariş Hazırlanıyor</div>
+                                <div class="d-flex gap-2">
+                                    <a class="btn-detay btn btn-secondary" href="/Kullanici/SiparisDetayKullanici?kuryeId=@kurye.KuryeId">Detay</a>
+                                    <a class="btn-detay btn btn-secondary" href="/Kullanici/Chat?kuryeId=@kurye.KuryeId&kuryeciTC=@kurye.KuryeciTC">Kuryeci Sohbeti</a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+                @if (teslimEdilenSiparisler.Count != 0)
+                {
+                    <h2 class="text-center fw-bold mb-3">Teslim Edilen Siparişler</h2>
+                    <hr>
+                    @foreach (var kurye in teslimEdilenSiparisler)
+                    {
+                        <div class="siparis d-flex flex-column bg-light mb-3 rounded p-3">
+                            <div class="d-flex justify-content-between">
+                                <p class="mb-0">Kuryecinin Telefon Numarası: <span>@kurye.KuryeciTel</span></p>
+                            </div>
+                            <hr>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>Durumu: Teslim Edlidi</div>
+                                <a class="btn-detay btn btn-secondary" href="/Kullanici/SiparisDetayKullanici?kuryeId=@kurye.KuryeId">Detay</a>
+                            </div>
+                        </div>
+                    }
+                }
+                @if (onaylanmamisSiparisler.Count != 0)
+                {
+                    <h2 class="text-center fw-bold mb-4">Onaylanmamış Siparişler</h2>
+                    <hr />
+                    @foreach (var kurye in onaylanmamisSiparisler)
+                    {
+                        <div class="siparis d-flex flex-column bg-light mb-3 rounded p-3">
+                            <div class="d-flex justify-content-between">
+                                <p class="mb-0">Kuryecinin Telefon Numarası: <span>@kurye.KuryeciTel</span></p>
+                            </div>
+                            <hr>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>Durumu: Onay bekleyen sipariş</div>
+                                <a class="btn-detay btn btn-secondary" href="/Kullanici/SiparisDetayKullanici?kuryeId=@kurye.KuryeId">Detay</a>
+                            </div>
+                        </div>
+                    }
+                }
+                @if (hazırlananSiparisler.Count == 0 && teslimEdilenSiparisler.Count == 0 && onaylanmamisSiparisler.Count == 0)
+                {
+                    <h5 class="pb-0 py-5">Sistemde henüz size ait herhangi bir sipariş kaydı bulunmamaktadır.</h5>
+                }
+            </div>
+        </div>
+    </div>
+</section>

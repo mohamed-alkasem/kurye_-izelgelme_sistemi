@@ -1,0 +1,38 @@
+footer {
+    background-color: black;
+}
+
+footer .sub-title {
+    color: var(--primary-color);
+}
+
+footer .iletisim p {
+    color: rgb(185, 185, 185);
+    font-size: 0.8rem;
+}
+
+footer li {
+    font-size: 0.9rem;
+}
+
+footer .baglanti:hover {
+    color: var(--primary-color) !important;
+}
+
+footer .haklar {
+    font-size: 0.9rem;
+}
+
+footer .sosyal-media a {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    border: 1px solid white;
+    color: white;
+    transition: var(--transition);
+}
+
+footer .sosyal-media a:hover {
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+}

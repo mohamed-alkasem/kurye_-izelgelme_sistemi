@@ -1,0 +1,88 @@
+#kuryeOl-form-section {
+    padding: 70px 0;
+}
+
+#kuryeOl-form-section .bilgiler input,
+#kuryeOl-form-section .dropdown .btn {
+    width: 100%;
+    padding: 10px;
+    border-radius: 0;
+    border: 1px solid black !important;
+    outline: 0;
+}
+#kuryeOl-form-section .fa-caret-down {
+    position : absolute;
+    right : 10px;
+    top : 50%;
+    transform : translateY(-50%);
+}
+
+#kuryeOl-form-section form .dropdown .btn:hover {
+    border: 1px solid;
+}
+
+#kuryeOl-form-section .dropdown-menu {
+    border-radius: 0;
+    border: 1px solid black !important;
+}
+
+#kuryeOl-form-section .dropdown-menu li:not(:last-child) {
+    border-bottom: 1px solid #eee;
+}
+
+#kuryeOl-form-section .dropdown-item {
+    color: gray;
+    padding: 10px 15px;
+}
+
+#kuryeOl-form-section .dropdown-item:hover {
+    background-color: #eee;
+    color: black;
+}
+
+#kuryeOl-form-section .ehliyet-secim label {
+    font-size: 1.2rem;
+}
+
+#kuryeOl-form-section .ehliyet-secim .s:hover * {
+    cursor: pointer !important;
+}
+
+#kuryeOl-form-section .btn-devam {
+    background-color: var(--primary-color);
+    width: fit-content;
+}
+
+#kuryeOl-form-section .btn-devam:hover {
+    background-color: black !important;
+}
+
+/* ------------------------- */
+
+#kuryeOl-form-section .calisma-saatleri .gun {
+    box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+#kuryeOl-form-section .calisma-saatleri span {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+}
+
+#kuryeOl-form-section .calisma-saatleri input {
+    height: 40px;
+    outline: 0;
+    cursor: pointer;
+}
+
+#kuryeOl-form-section .calisma-saatleri p {
+    width: clamp(70px, 40vw, 150px);
+}
+
+#kuryeOl-form-section textarea {
+    all: unset;
+    border: 1px solid black !important;
+    overflow-x: hidden;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}

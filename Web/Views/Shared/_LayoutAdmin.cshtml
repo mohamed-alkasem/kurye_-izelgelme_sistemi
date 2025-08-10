@@ -1,0 +1,247 @@
+﻿@using Infrastructure.Data
+@using Microsoft.AspNetCore.Identity
+@inject UserManager<AppUser> _userManager
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kurye</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Jockey+One&display=swap" rel="stylesheet">
+    <!-- aos -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- custom css -->
+    <link rel="stylesheet" href="~/css/sss.css">
+    <link rel="stylesheet" href="~/css/footer.css">
+    <link rel="stylesheet" href="~/css/header.css">
+    <link rel="stylesheet" href="~/css/yardim.css">
+    <link rel="stylesheet" href="~/css/anasayfa.css">
+    <link rel="stylesheet" href="~/css/hakkimizda.css">
+    <link rel="stylesheet" href="~/css/istek-detay.css">
+    <link rel="stylesheet" href="~/css/istekler-admin.css">
+    <link rel="stylesheet" href="~/css/sikayetler-admin.css">
+    <link rel="stylesheet" href="~/css/kullanim-kosullari.css">
+    <link rel="stylesheet" href="~/css/gizlilik-politikasi.css">
+</head>
+<body>
+    <header class="py-2">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-xl-11">
+                    <!-- admin navbar -->
+                    <div class="d-flex align-items-center justify-content-between gap-5">
+                        <a class="navbar-brand text-white" asp-controller="Admin" asp-action="Anasayfa">
+                            <img src="~/imgs/logo.png" alt="logo" width="70">
+                        </a>
+                        <nav class="navbar d-none d-xxl-flex">
+                            <ul class="me-auto mb-2 mb-lg-0 d-flex gap-3 list-unstyled">
+                                <li class="nav-item">
+                                    <a class="nav-link" asp-controller="Admin" asp-action="Anasayfa">ِANASAYFA</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" asp-controller="Admin" asp-action="SikayetlerAdmin">ŞİKAYETLER</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" asp-controller="Admin" asp-action="IsteklerAdmin">İSTEKLER</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" asp-controller="Admin" asp-action="KabulKuryecilerAdmin">KURYECİ PANELİ</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" asp-controller="Admin" asp-action="KullaniciRaporu">KAYITLAR</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" asp-controller="Admin" asp-action="SiparisRaporu">TESLİMATLAR</a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <!-- Çıkış Button -->
+                        <div class="d-flex align-items-center justify-content-between gap-1">
+                            <button class="btn-cikis border-0 p-2 d-flex align-items-center d-flex justify-content-center align-items-center" data-bs-toggle="modal" data-bs-target="#exampleModal6">
+                                <i class="fa-solid fa-right-from-bracket fa-lg text-white"></i>
+                            </button>
+
+                            <button class="navbar-toggler d-xxl-none" type="button" data-bs-toggle="offcanvas"
+                                    data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                                <i class="fa-solid fa-bars fa-xl" style="color: #ffffff;"></i>
+                            </button>
+                        </div>
+                        <!-- Çıkış Modal -->
+                        <div class="modal fade" id="exampleModal6" tabindex="-1" aria-labelledby="exampleModalLabel6" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h2 class="modal-title fs-5" id="exampleModalLabel6">Çıkış</h2>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Çıkış yapmak istediğinizden emin misiniz?
+                                    </div>
+                                    <div class="modal-footer">
+                                        <form method="post" action="/Admin/CikisYap">
+                                            <button type="submit" class="btn-evet btn btn-success" data-bs-dismiss="modal">Evet</button>
+                                        </form>
+                                        <button type="button" class="btn-hayir btn btn-secondary" data-bs-dismiss="modal">Hayır</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-------- offcanvas -------- -->
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+            <div class="offcanvas-header">
+                <img src="~/imgs/logo.png" alt="logo" width="60">
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <!-- admin offcanvas -->
+            <div class="offcanvas-body">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-controller="Admin" asp-action="Anasayfa">ِANASAYFA</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-controller="Admin" asp-action="SikayetlerAdmin">ِŞİKEYETLER</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-controller="Admin" asp-action="IsteklerAdmin">ِİSTEKLER</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-controller="Admin" asp-action="KabulKuryecilerAdmin">ِKURYECİ PANELİ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-controller="Admin" asp-action="KullaniciRaporu">KAYITLAR</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-controller="Admin" asp-action="SiparisRaporu">TESLİMATLAR</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main role="main">
+        @RenderBody()
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-xl-11">
+                    <div class="row py-5">
+                        <div class="col-12 col-md-4">
+                            <div class="text-center text-md-start mb-5">
+                                <div class="logo-cont mb-3">
+                                    <img src="~/imgs/logo.png" width="150" alt="logo" data-aos="fade-right" data-aos-easing="ease-out-back">
+                                </div>
+                                <i class="text-white">Özgür,Hızlı ve Çalışkan Kurye</i>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <div class="text-center text-md-start mb-5">
+                                <h5 class="sub-title mb-3">Bağlantılar</h5>
+                                <ul class="list-unstyled">
+                                    <li class="mb-3">
+                                        <a class="baglanti text-decoration-none text-white"
+                                           asp-controller="Admin" asp-action="SSS">
+                                            Sıkça Sorulan Sorular (SSS)
+                                        </a>
+                                    </li>
+                                    <li class="mb-3">
+                                        <a class="baglanti text-decoration-none text-white"
+                                           asp-controller="Admin" asp-action="KullanimKosullari">
+                                            Kullanım Koşulları
+                                        </a>
+                                    </li>
+                                    <li class="mb-3">
+                                        <a class="baglanti text-decoration-none text-white"
+                                           asp-controller="Admin" asp-action="GizlilikPolitikasi">
+                                            Gizlilik Politikası
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="baglanti text-decoration-none text-white"
+                                           asp-controller="Admin" asp-action="Yardim">
+                                            Yardım
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <div class="iletisim d-flex flex-column flex-xl-row flex-xl-column gap-4 gap-xl-3">
+                                <div class="d-flex flex-column gap-4 flex-md-row gap-md-3 mx-auto mx-md-0 text-md-start">
+                                    <i class="fa-solid fa-phone fa-xl d-flex align-items-center justify-content-center justify-content-xl-start"
+                                       style="color: #0a9869;"></i>
+                                    <div class="text-center text-md-start">
+                                        <h6 class="sub-title d-none d-md-block text-white">Bizi Ara</h6>
+                                        <p class="mb-0">123-456-7890</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-column gap-4 flex-md-row gap-md-3 mx-auto mx-md-0 text-md-start">
+                                    <i class="fa-solid fa-envelope-open fa-xl d-flex align-items-center justify-content-center justify-content-xl-start"
+                                       style="color: #0a9869;"></i>
+                                    <div class="text-center text-md-start">
+                                        <h6 class="sub-title d-none d-md-block text-white">E-Post</h6>
+                                        <p class="mb-0">www.kurye.com</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-column gap-4 flex-md-row gap-md-3 mx-auto mx-md-0 text-md-start">
+                                    <i class="fa-solid fa-location-dot fa-xl d-flex align-items-center justify-content-center justify-content-xl-start"
+                                       style="color: #0a9869;"></i>
+                                    <div class="text-center text-md-start">
+                                        <h6 class="sub-title d-none d-md-block text-white">Adres</h6>
+                                        <p class="mb-0">
+                                            Atatürk Bulvarı No:211, Eyüp sultan/Ankara No:10/5
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="sosyal-media d-flex justify-content-center gap-3">
+                        <a class="d-flex align-items-center justify-content-center text-decoration-none" target="_blank" href="https://www.facebook.com">
+                            <i class="fa-brands fa-facebook fa-xl mx-2"></i>
+                        </a>
+                        <a class="d-flex align-items-center justify-content-center text-decoration-none" target="_blank" href="https://www.instagram.com">
+                            <i class="fa-brands fa-instagram fa-xl mx-2"></i>
+                        </a>
+                        <a class="d-flex align-items-center justify-content-center text-decoration-none" target="_blank" href="https://www.x.com">
+                            <i class="fa-brands fa-x-twitter fa-xl mx-2"></i>
+                        </a>
+                        <a class="d-flex align-items-center justify-content-center text-decoration-none" target="_blank" href="https://www.youtube.com">
+                            <i class="fa-brands fa-youtube fa-xl mx-2"></i>
+                        </a>
+                    </div>
+                    <hr class="text-white mb-0">
+                </div>
+            </div>
+        </div>
+        <p class="haklar text-white text-center p-3 mb-0">
+            © 2025 Tüm Hakları Saklıdır. YETERKİ İSTE Kurye
+            Hizmetleri
+        </p>
+    </footer>
+
+    <!-- aos -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/main.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

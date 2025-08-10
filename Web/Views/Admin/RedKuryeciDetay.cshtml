@@ -1,0 +1,89 @@
+﻿@using Domain.Entities
+
+@model Kuryeci
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<section id="istek-detay-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-10 col-lg-8 col-xl-5">
+                <div class="px-3 py-5 border border-1 rounded shadow-sm">
+                    <form action="">
+                        <div class="mb-4">
+                            <h4 class="mb-3">Aday Bilgileri</h4>
+                            <div class="mb-2 d-flex flex-column flex-sm-row">
+                                <label>Ad Soyad:</label>
+                                <input asp-for="AdSoyad" class="flex-fill" type="text" readonly>
+                            </div>
+                            <div class="mb-2 d-flex flex-column flex-sm-row">
+                                <label>TC Kimlik No:</label>
+                                <input asp-for="TC" class="flex-fill" type="text" readonly>
+                            </div>
+                            <div class="mb-2 d-flex flex-column flex-sm-row">
+                                <label>Yaş:</label>
+                                <input asp-for="Yas" class="flex-fill" type="text" readonly>
+                            </div>
+                            <div class="mb-2 d-flex flex-column flex-sm-row">
+                                <label>Cinsiyet:</label>
+                                <input asp-for="Cinsiyet" class="flex-fill" type="text" readonly>
+                            </div>
+                            <div class="mb-2 d-flex flex-column flex-sm-row">
+                                <label>Telefon Numarası:</label>
+                                <input asp-for="Tel" class="flex-fill" type="text" readonly>
+                            </div>
+                            <div class="mb-2 d-flex flex-column flex-sm-row">
+                                <label>E-posta:</label>
+                                <input asp-for="Eposta" class="flex-fill" type="text" readonly>
+                            </div>
+                            <div class="mb-2 d-flex flex-column flex-sm-row">
+                                <label>İl:</label>
+                                <input asp-for="IkametIl" class="flex-fill" type="text" readonly>
+                            </div>
+                            <div class="mb-2 d-flex flex-column flex-sm-row">
+                                <label>İlçe:</label>
+                                <input asp-for="IkametIlce" class="flex-fill" type="text" readonly>
+                            </div>
+                            <div class="mb-2 d-flex flex-column flex-sm-row">
+                                <label>Mahalle:</label>
+                                <input asp-for="IkametMahalle" class="flex-fill" type="text" readonly>
+                            </div>
+                            <div class="mb-2 d-flex flex-column flex-sm-row">
+                                <label>Adres:</label>
+                                <input asp-for="IkametAdres" class="flex-fill" type="text" readonly>
+                            </div>
+                            <div class="mb-2 d-flex flex-column flex-sm-row">
+                                <label>Çalışacak İlçe:</label>
+                                <input asp-for="CalisacakIlce" class="flex-fill" type="text" readonly>
+                            </div>
+                            <div class="mb-2 d-flex flex-column flex-sm-row">
+                                <label>Ehliyet:</label>
+                                <input asp-for="EhliyetTipi" class="flex-fill" type="text" readonly>
+                            </div>
+                            <div class="mb-2 d-flex flex-column flex-sm-row">
+                                <label>İzin Günü:</label>
+                                <input asp-for="IzinGunu" class="flex-fill" type="text" readonly>
+                            </div>
+                            <div class="mb-2 d-flex flex-column flex-sm-row">
+                                <label>İstek Tarihi:</label>
+                                <input value="@Model.IstekTarihi.ToString("dd.MM.yyyy HH:mm")" class="flex-fill" type="text" readonly>
+                            </div>
+                            <div class="mb-2 d-flex flex-column flex-sm-row">
+                                <label>Red Tarihi:</label>
+                                <input value="@Model.RedTarihi.ToString("dd.MM.yyyy HH:mm")" class="flex-fill" type="text" readonly>
+                            </div>
+                            <div class="mb-2 d-flex flex-column flex-sm-row">
+                                <label>Reddetme Sebebi:</label>
+                                <input asp-for="ReddetmeSebebi" class="flex-fill" type="text" readonly>
+                            </div>
+                        </div>
+                        <div class="d-flex gap-2 justify-content-center">
+                            <a asp-controller="Admin" asp-action="IsteklerAdmin" class="btn-reddet btn btn-secondary px-3 border-0 d-block">Geri</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,28 @@
+#uye-ol-section {
+    padding-block: 70px;
+}
+
+#uye-ol-section .card {
+    background-color: black;
+}
+
+#uye-ol-section .btn-olustur {
+    background-color: var(--primary-color);
+    color: white;
+    transition: var(--transition);
+}
+
+#uye-ol-section .btn-olustur:hover {
+    background-color: white;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+}
+
+#uye-ol-section input {
+    outline: 0;
+    box-shadow: var(--box-shadow);
+}
+
+#uye-ol-section .baglanti:hover {
+    color: var(--primary-color) !important;
+}

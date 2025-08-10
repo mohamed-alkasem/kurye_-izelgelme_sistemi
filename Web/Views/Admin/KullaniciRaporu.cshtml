@@ -1,0 +1,91 @@
+﻿@using Application.DTOs
+@model List<KullaniciDto>
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<section id="kullanici-listesi-section" style="padding:70px 0;">
+    <div class="container">
+        @if (Model.Count != 0)
+        {
+            <div class="row justify-content-center">
+                <div class="col-12 col-xl-11">
+                    <h2 class="mb-4 text-center">Kullanıcı Raporu</h2>
+                </div>
+                <div class="col-12 col-xl-11" style="overflow-x:auto;">
+                    <div style="text-align:end">
+                        <a id="PdfButton" class="btn mb-3" asp-action="KullaniciPdfTum" asp-controller="Admin" target="_blank">
+                            Tüm Kullanıcıları PDF Olarak İndir
+                        </a>
+                    </div>
+                    <table class="table table-bordered table-striped text-center">
+                        <thead>
+                            <tr>
+                                <th>TC</th>
+                                <th>Ad Soyad</th>
+                                <th>Telefon</th>
+                                <th>Adres</th>
+                                <th>E-Posta</th>
+                                <th>Kayıt Tarihi</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var kullanici in Model)
+                            {
+                                <tr>
+                                    <td>@kullanici.TC</td>
+                                    <td>@kullanici.AdSoyad</td>
+                                    <td>@kullanici.Tel</td>
+                                    <td>@kullanici.Adres</td>
+                                    <td>@kullanici.Eposta</td>
+                                    <td>@kullanici.KayitTarihi.ToString("dd.MM.yyyy HH:mm")</td>
+                                    <td>
+                                        <a id="PDF-Indir" href="/Admin/KullaniciPdf?tc=@kullanici.TC" class="btn btn-sm">PDF İndir</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="row justify-content-center">
+                <div class="col-12 col-xl-11">
+                    <h5 class="text-center mb-0 py-5">Sistemde henüz bir kayıt bulunmamaktadır.</h5>
+                </div>
+            </div>
+        }
+    </div>
+</section>
+
+<style>
+    #kullanici-listesi-section h2 {
+        font-family: "Jockey One", sans-serif;
+        font-size: calc(2rem + 1vw);
+        letter-spacing: 1px;
+    }
+
+    #PdfButton {
+        color: #fff;
+        background-color: #0a9869;
+    }
+
+    #PdfButton:hover {
+        color: #fff;
+        background-color: #1da376;
+    }
+
+    #PDF-Indir {
+        color: #fff;
+        background-color: #0a9869;
+    }
+
+    #PDF-Indir:hover {
+        color: #fff;
+        background-color: #1da376;
+    }
+</style>
+

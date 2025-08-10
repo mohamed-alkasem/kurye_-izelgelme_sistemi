@@ -1,0 +1,71 @@
+﻿@using Domain.Entities
+@model List<Kurye>
+@{
+    Layout = "~/Views/Shared/_LayoutKuryeci.cshtml";
+}
+@{
+    List<Kurye> teslimEdilmeyenSiparisler = new List<Kurye>();
+    List<Kurye> teslimEdilenSiparisler = new List<Kurye>();
+    foreach (var kurye in Model)
+    {
+        if (kurye.TeslimDurumu == "Teslim Edilmedi") teslimEdilmeyenSiparisler.Add(kurye);
+        else if (kurye.TeslimDurumu == "Teslim Edildi") teslimEdilenSiparisler.Add(kurye);
+    }
+}
+
+<section id="aktif-siparis-section" style="padding: 70px 0;">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-10 col-lg-8 col-xl-7">
+                @if (teslimEdilmeyenSiparisler.Count != 0)
+                {
+                    <h2 class="text-center fw-bold mb-3">Teslim Edilmeyen Siparişler</h2>
+                    <hr>
+                    @foreach (var kurye in teslimEdilmeyenSiparisler)
+                    {
+                        <div class="siparis d-flex flex-column bg-light mb-3 rounded p-3">
+                            <div class="d-flex justify-content-between">
+                                <p class="mb-0">Alıcı Adı: <span>@kurye.AdSoyad</span> </p>
+                                <div>Sipariş Tarihi : <span>@kurye.SiparisTarihi.ToString("dd.MM.yyyy")</span></div>
+                            </div>
+                            <hr />
+                            <div class="d-flex justify-content-between align-items-center">
+                                <p class="mb-0">Telefon No: <span>@kurye.Tel</span></p>
+                                <div class="d-flex gap-2">
+                                    <a class="btn-teslim btn btn-success" href="/Kuryeci/SiparisTeslimEt?kuryeId=@kurye.Id">Teslim Et</a>
+                                    <a class="btn btn-success" href="/Kuryeci/Chat?kuryeId=@kurye.Id&kuryeciTC=@kurye.KuryeciTC">Kullanıcı sohbeti</a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+                @if (teslimEdilenSiparisler.Count != 0)
+                {
+                    <h2 class="text-center fw-bold mb-3">Teslim Edilen Siparişler</h2>
+                    <hr />
+                    @foreach (var kurye in teslimEdilenSiparisler)
+                    {
+                        <div class="siparis d-flex flex-column bg-light mb-3 rounded p-3">
+                            <div class="d-flex justify-content-between">
+                                <p class="mb-0">Alıcı Adı: <span>@kurye.AdSoyad</span> </p>
+                                <div>Sipariş Tarihi: <span>@kurye.SiparisTarihi.ToString("dd.MM.yyyy")</span></div>
+                            </div>
+                            <hr>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <p class="mb-0">Telefon No: <span>@kurye.Tel</span></p>
+                                <div class="d-flex gap-2">
+                                    <button disabled class="btn-teslim btn btn-secondary">Teslim Edildi</button>
+                                    <a class="btn-detay btn btn-secondary" href="/Kuryeci/TeslimEdilenSiparisDetay?kuryeId=@kurye.Id">Detay</a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+                @if (teslimEdilmeyenSiparisler.Count == 0 && teslimEdilenSiparisler.Count == 0)
+                {
+                    <h5 class="mb-0" style="padding: 100px 0;">Sistemde henüz size ait herhangi bir sipariş kaydı bulunmamaktadır.</h5>
+                }
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,32 @@
+#giris-section {
+    padding-block: 70px;
+}
+
+#giris-section .merhaba {
+    font-size: 1.1rem !important;
+}
+
+#giris-section .card {
+    background-color: black;
+}
+
+#giris-section .btn-giris {
+    background-color: var(--primary-color);
+    color: white;
+    transition: var(--transition);
+}
+
+#giris-section .btn-giris:hover {
+    background-color: white;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+}
+
+#giris-section input {
+    outline: 0;
+    box-shadow: var(--box-shadow);
+}
+
+#giris-section .baglanti:hover {
+    color: var(--primary-color) !important;
+}

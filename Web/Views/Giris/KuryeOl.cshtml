@@ -1,0 +1,222 @@
+﻿@using Domain.Entities
+@model Kuryeci
+@{
+    Layout = "~/Views/Shared/_LayoutGiris.cshtml";
+    var ehliyetTipleri = new[] { "A", "A1", "A2", "B", "Yok" };
+    var gunler = new[] { "Pazartesi", "Salı", "Çarşamba", "Perşembe", "Cuma", "Cumartesi", "Pazar", "İzin istemiyorum" };
+}
+
+<section id="kuryeOl-main-section" class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-xl-11">
+                <div class="row">
+                    <div class="col-12 col-lg-6 order-lg-2">
+                        <div class="text-center mb-5 mb-lg-0 h-100 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="300">
+                            <h2 class="main-title fw-bold mb-4 text-white">
+                                Kendi işinin <span>Patronu Ol!</span>
+                            </h2>
+                            <p class="text-white fs-4">
+                                YETERKİ İSTE'de istediğin gün ve saatte çalışır.
+                                Kazancını
+                                kendin
+                                belirlersin. Bu süreçte
+                                senin
+                                için hazırladığımız destek ve teşvik programlarıyla yüksek kazanç seni bekliyor.
+                            </p>
+                            <a href="whatsapp://send?phone=+90555555555&text=Merhaba%20Kuryeye%20ihtiyacım%20var." class="btn-ara btn mx-auto px-5 mb-4 mb-lg-0 fs-5" data-aos="zoom-out" data-aos-delay="600">Bizi Ara</a>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <div class="img-cont d-flex justify-content-center d-lg-block">
+                            <img class="kuryeci-img" src="~/imgs/kuryeci.png" alt="img" data-aos="fade-right" data-aos-delay="300">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="kuryeOl-form-section" class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-lg-11">
+                <p>YETERKİ İSTE'de kurye olmak için başvuru formunuzu doldurunuz</p>
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <form id="kuryeForm" asp-controller="Giris" asp-action="KuryeOl" method="post">
+                    <div class="mb-4">
+                        <h4 class="sub-title">Kişisel Bilgiler</h4>
+                        <div>
+                            <div class="mb-2">
+                                <input asp-for="AdSoyad" class="form-control" placeholder="*Ad Soyad" />
+                                <span asp-validation-for="AdSoyad" class="text-danger"></span>
+                            </div>
+                            <div class="mb-2">
+                                <input asp-for="Yas" min="18" max="50" class="form-control" placeholder="*Yaşınızı giriniz" />
+                                <span asp-validation-for="Yas" class="text-danger"></span>
+                            </div>
+                            <div class="mb-2">
+                                <input asp-for="TC" class="form-control" placeholder="*TC Kimlik No" />
+                                <span asp-validation-for="TC" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <select asp-for="Cinsiyet" required class="form-select">
+                            <option value="" selected hidden>*Cinsiyet</option>
+                            <option>Erkek</option>
+                            <option>Kadın</option>
+                        </select>
+                        <span asp-validation-for="Cinsiyet" class="text-danger"></span>
+                    </div>
+                    <div class="mb-4">
+                        <h4 class="sub-title">İkamet Adresi</h4>
+                        <div class="mb-2">
+                            <select id="il" name="IkametIl" required class="form-select"></select>
+                            <span asp-validation-for="IkametIl" class="text-danger"></span>
+                        </div>
+                        <div class="mb-2">
+                            <select id="ilce" name="IkametIlce" required class="form-select"></select>
+                            <span asp-validation-for="IkametIlce" class="text-danger"></span>
+                        </div>
+                        <div class="mb-2">
+                            <select id="mahalle" name="IkametMahalle" required class="form-select"></select>
+                            <span asp-validation-for="IkametMahalle" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <h4 class="sub-title">İletişim</h4>
+                        <div class="mb-2">
+                            <input asp-for="Tel" class="form-control" placeholder="*Telefon" />
+                            <span asp-validation-for="Tel" class="text-danger"></span>
+                        </div>
+                        <div class="mb-2">
+                            <input asp-for="Eposta" class="form-control" placeholder="*E-posta" />
+                            <span asp-validation-for="Eposta" class="text-danger"></span>
+                        </div>
+                        <div class="mb-2">
+                            <input asp-for="IkametAdres" class="form-control" placeholder="*Adres" />
+                            <span asp-validation-for="IkametAdres" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <h4 class="sub-title">Çalışmak İstenen İlçe</h4>
+                        <select asp-for="CalisacakIlce" class="form-select" required>
+                            <option value="" selected hidden>*İlçe seç</option>
+                            <option>İstanbul</option>
+                            <option>Isparta</option>
+                        </select>
+                        <span asp-validation-for="CalisacakIlce" class="text-danger"></span>
+                    </div>
+                    <div class="mb-4">
+                        <h4 class="sub-title">Ehliyet Tipi</h4>
+                        <div class="d-flex flex-wrap gap-3">
+                            @foreach (var tip in ehliyetTipleri)
+                            {
+                                <div class="form-check">
+                                    <input required class="form-check-input" type="radio" name="EhliyetTipi" value="@tip" id="@tip" />
+                                    <label class="form-check-label" for="@tip">@tip</label>
+                                </div>
+                            }
+                            <span asp-validation-for="EhliyetTipi" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <h4 class="sub-title">Haftalık İzin Günü</h4>
+                        <label for="IzinGunu">Haftalık izin gününü seç:</label>
+                        <select name="IzinGunu" id="IzinGunu" class="form-select mt-2" required>
+                            <option value="" selected hidden>*Gün Seçin</option>
+                            @foreach (var gun in gunler)
+                            {
+                                <option value="@gun">@gun</option>
+                            }
+                        </select>
+                        <span asp-validation-for="IzinGunu" class="text-danger"></span>
+                    </div>
+                    <button type="submit" class="btn btn-success">Gönder</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .swal-custom-success-button {
+        background-color: green !important;
+        color: white !important;
+        border: none !important;
+    }
+</style>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <script type="text/javascript">
+            Swal.fire({
+                icon: 'success',
+                title: 'Başarılı!',
+                html: '@Html.Raw(TempData["SuccessMessage"])',
+                confirmButtonText: 'Tamam',
+                customClass: {
+                    confirmButton: 'swal-custom-success-button'
+                }
+            });
+        </script>
+    }
+
+    <script>
+        const data = {
+            "İstanbul": {
+                "Kadıköy": ["Moda", "Acıbadem", "Bostancı"],
+                "Beşiktaş": ["Levent", "Etiler", "Ortaköy"]
+            },
+            "Ankara": {
+                "Çankaya": ["Kızılay", "Bahçelievler"],
+                "Keçiören": ["Etlik", "Aşağı Eğlence"]
+            }
+        };
+
+        const ilSelect = document.getElementById("il");
+        const ilceSelect = document.getElementById("ilce");
+        const mahalleSelect = document.getElementById("mahalle");
+
+                function populateSelect(select, options) {
+            select.innerHTML = "";
+
+            const defaultOption = document.createElement("option");
+            defaultOption.text = "*Seçiniz";
+            defaultOption.selected = true;
+            defaultOption.value = "";
+            select.appendChild(defaultOption);
+
+            options.forEach(opt => {
+                const option = document.createElement("option");
+                option.text = opt;
+                option.value = opt;
+                select.appendChild(option);
+            });
+
+            const firstOption = select.querySelector("option");
+            firstOption.style.display = "none";
+        }
+
+        populateSelect(ilSelect, Object.keys(data));
+
+        ilSelect.addEventListener("change", () => {
+            const selectedIl = ilSelect.value;
+            const ilceler = Object.keys(data[selectedIl] || {});
+            populateSelect(ilceSelect, ilceler);
+            populateSelect(mahalleSelect, []);
+        });
+
+        ilceSelect.addEventListener("change", () => {
+            const selectedIl = ilSelect.value;
+            const selectedIlce = ilceSelect.value;
+            const mahalleler = data[selectedIl]?.[selectedIlce] || [];
+            populateSelect(mahalleSelect, mahalleler);
+        });
+    </script>
+}
+

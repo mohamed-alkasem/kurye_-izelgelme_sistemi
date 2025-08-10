@@ -1,0 +1,89 @@
+/* --------------Hero section-------------- */
+#hero-section .layer {
+    padding: 220px 0;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+#hero-section {
+    background-image: url("../imgs/background.jpg");
+    background-position: center;
+    background-size: cover;
+    font-family: "Jockey One", sans-serif;
+}
+
+@media(min-width:1200px) {
+    #hero-section .layer {
+        padding: 250px 0;
+    }
+}
+
+#hero-section .main-title {
+    font-size: calc(2.5rem + 1vw);
+}
+
+#hero-section .main-title span {
+    color: var(--primary-color);
+}
+
+#hero-section .desc {
+    font-size: 1.7rem;
+    color: rgb(201, 201, 201);
+}
+
+/* --------------Modeller section-------------- */
+#modeller-section {
+    padding: 100px 0;
+}
+
+#modeller-section h2,
+#neden-biz-section h2,
+#sss-section h2 {
+    font-size: calc(2rem + 1vw);
+    font-family: "Jockey One", sans-serif;
+}
+
+#modeller-section p {
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+#modeller-section .kuryeler img {
+    width: clamp(150px, 40vw, 210px);
+}
+
+/* --------------Neden-Biz section-------------- */
+#neden-biz-section {
+    background-color: black;
+    padding: 100px 0;
+}
+
+#neden-biz-section img {
+    width: clamp(80px, 40vw, 100px);
+}
+
+/* --------------SSS section-------------- */
+#sss-section {
+    padding: 70px 0;
+}
+
+#sss-section .accordion-button:not(.collapsed) {
+    background-color: #eee !important;
+}
+
+#sss-section .accordion-item button {
+    font-size: 1.1rem;
+}
+
+#sss-section .accordion-item button:hover {
+    background-color: #eee;
+}
+
+#sss-section .accordion-item button:focus {
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+#sss-section .accordion-body {
+    color: gray;
+    font-size: 0.9rem;
+}

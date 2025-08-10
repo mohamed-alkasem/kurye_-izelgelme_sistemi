@@ -1,0 +1,97 @@
+﻿@{
+    var kurye = ViewBag.Kurye;
+    var toUserTC = ViewBag.ToUserTC;
+    var myUsername = ViewBag.CurrentUserTC;
+    var myFullName = ViewBag.CurrentUserName;
+}
+
+<section id="chat-section" class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-8 col-xl-5">
+                <h3 class="text-center mb-3">Sohbet - @myFullName</h3>
+                <div id="chatBox" class="rounded" style="border:1px solid #ccc; padding:10px; height: 400px; overflow-y: auto;"></div>
+                <div class="d-flex mt-2">
+                    <input type="text" id="messageInput" class="form-control me-2 shadow-none" style="border-color: #cccccc" placeholder="Mesaj yazın..." />
+                    <button class="btn btn-success" onclick="sendMessage()">Gönder</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/7.0.5/signalr.min.js"></script>
+<script>
+    const myUsername = "@myUsername";
+    const myFullName = "@myFullName";
+    const toUser = "@toUserTC";
+
+    const connection = new signalR.HubConnectionBuilder()
+        .withUrl("/chathub?username=" + myUsername + "&fullname=" + encodeURIComponent(myFullName))
+        .build();
+
+    connection.on("ReceiveMessage", function (fromUserDisplayName, message) {
+        const box = document.getElementById("chatBox");
+
+        const isMine = fromUserDisplayName === myFullName;
+        const bubbleColor = isMine ? "#eee" : "green";
+        const textColor = isMine ? "black" : "white";
+        const align = isMine ? "right" : "left";
+
+    const messageDiv = `
+        <div class="box position-relative ${isMine ? 'mine' : 'theirs'}" style="text-align: ${align}; margin-bottom: 10px;">
+            <div style="
+                display: inline-block;
+                background-color: ${bubbleColor};
+                color: ${textColor};
+                padding: 5px 15px;
+                border-radius: 8px;
+                max-width: 70%;
+                text-align: left;
+            ">
+                ${message}
+                <div style="font-size: 0.8em; text-align: right; color: ${isMine ? 'gray' : 'white'};">
+                    ${new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}
+                </div>
+            </div>
+        </div>
+    `;
+        box.innerHTML += messageDiv;
+        box.scrollTop = box.scrollHeight;
+    });
+
+    connection.start().then(() => console.log("Connected")).catch(err => console.error(err));
+
+    function sendMessage() {
+        const input = document.getElementById("messageInput");
+        const message = input.value;
+        if (message.trim() !== "") {
+            connection.invoke("SendMessage", myUsername, toUser, message);
+            input.value = '';
+        }
+    }
+</script>
+
+<style>
+    .box.mine::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: -2px;
+        background-color: #eee;
+        width: 15px;
+        height: 15px;
+        transform: skew(-23deg);
+    }
+
+    .box.theirs::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -2px;
+        background-color: green;
+        width: 15px;
+        height: 15px;
+        transform: skew(23deg);
+    }
+</style>

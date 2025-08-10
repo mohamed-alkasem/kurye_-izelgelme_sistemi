@@ -1,0 +1,18 @@
+#sikayetler-admin-section h2 {
+    font-family: "Jockey One", sans-serif;
+    font-size: calc(2rem + 1vw);
+    letter-spacing: 1px;
+}
+
+#sikayetler-admin-section {
+    padding: 70px 0;
+}
+
+#sikayetler-admin-section .mesaj {
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.1);
+}
+
+#sikayetler-admin-section .mesaj-body {
+    white-space: break-spaces;
+    overflow-wrap: break-word;
+}

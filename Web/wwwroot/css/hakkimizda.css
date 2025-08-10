@@ -1,0 +1,21 @@
+#hakkimizda-section {
+    padding: 70px 0;
+}
+
+#hakkimizda-section .img-cont,
+#ekip-section .img-cont {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+
+#hakkimizda-section p,
+#ekip-section p {
+    font-size: 0.9rem;
+    line-height: 20px;
+}
+
+#ekip-section {
+    padding: 70px 0;
+    background-color: #eee;
+}

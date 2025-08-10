@@ -1,0 +1,67 @@
+﻿@using Domain.Entities
+@model List<Kuryeci>
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+@{
+    List<Kuryeci> beklemedeKuryeciler = new List<Kuryeci>();
+    List<Kuryeci> redKuryeciler = new List<Kuryeci>();
+    foreach (var kuryeci in Model)
+    {
+        if (kuryeci.KabulDurumu == "Beklemede") beklemedeKuryeciler.Add(kuryeci);
+        else if (kuryeci.KabulDurumu == "Red") redKuryeciler.Add(kuryeci);
+    }
+}
+
+<section id="istekler-admin-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-10 col-lg-8 col-xl-7">
+
+                @if (beklemedeKuryeciler.Count != 0)
+                {
+                    <h2 class="text-center fw-bold mb-3">istekler</h2>
+                    <hr />
+                    @foreach (var kuryeci in beklemedeKuryeciler)
+                    {
+                        <div class="istek d-flex flex-column bg-light mb-3 rounded p-3">
+                            <div class="d-flex justify-content-between">
+                                <p class="mb-0">Kuryeci Adı: <span>@kuryeci.AdSoyad</span></p>
+                                <div>İstek Tarihi: <span>@kuryeci.IstekTarihi.ToString("dd.MM.yyyy")</span></div>
+                            </div>
+                            <hr>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>E-posta : <span>@kuryeci.Eposta</span></div>
+                                <a class="btn-detay btn btn-secondary" href="/Admin/IstekDetay?kuryeciId=@kuryeci.Id">Detay</a>
+                            </div>
+
+                        </div>
+                    }
+                }
+                @if (redKuryeciler.Count != 0)
+                {
+                    <h2 class="text-center fw-bold mb-3">Red</h2>
+                    <hr />
+                    @foreach (var kuryeci in redKuryeciler)
+                    {
+                        <div class="istek d-flex flex-column bg-light mb-3 rounded p-3">
+                            <div class="d-flex justify-content-between">
+                                <p class="mb-0">Kuryeci Adı: <span>@kuryeci.AdSoyad</span></p>
+                                <div>İstek Tarihi: <span>@kuryeci.IstekTarihi.ToString("dd.MM.yyyy")</span></div>
+                            </div>
+                            <hr>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>E-posta: <span>@kuryeci.Eposta</span></div>
+                                <a class="btn-detay btn btn-secondary" href="/Admin/RedKuryeciDetay?kuryeciId=@kuryeci.Id">Detay</a>
+                            </div>
+                        </div>
+                    }
+                }
+                @if (beklemedeKuryeciler.Count == 0 & redKuryeciler.Count == 0)
+                {
+                    <h5 class="mb-0 py-5">Sistemde henüz size ait herhangi bir istek kaydı bulunmamaktadır.</h5>
+                }
+            </div>
+        </div>
+    </div>
+</section>

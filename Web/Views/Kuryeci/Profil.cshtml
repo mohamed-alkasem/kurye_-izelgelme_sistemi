@@ -1,0 +1,50 @@
+﻿@using Domain.Entities
+@model Kuryeci
+@{
+    Layout = "~/Views/Shared/_LayoutKuryeci.cshtml";
+}
+
+<section id="profil-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-sm-10 col-md-8 col-lg-6 col-xxl-5">
+                <form class="bg-light rounded p-4" asp-controller="Kuryeci" asp-action="Profil" enctype="multipart/form-data" method="post">
+                    <input type="hidden" asp-for="Id" />
+                    <div class="img-cont mx-auto mb-4" data-aos="flip-left" data-aos-delay="500">
+                        <img id="profil-img" src="@Model.ImageSrc" alt="profil-img" />
+                        <label class="edit-icon" for="file-upload">
+                            <i class="fa-solid fa-pencil" style="color: white;"></i>
+                            <input asp-for="clientFile" type="file" name="clientFile" id="file-upload" accept="image/*" onchange="previewImage(event)" />
+                            <div id="typeError" class="text-danger d-none">Geçersiz dosya türü! Lütfen JPG, PNG veya GIF dosyası yükleyin.</div>
+                        </label>
+                        <span asp-validation-for="clientFile" class="text-danger"></span>
+                    </div>
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="mb-3">
+                        <label class="d-block mb-1">TC Numarası</label>
+                        <input asp-for="TC" value="@Model.TC" class="d-block w-100 rounded py-1 px-2 bg-white text-muted" readonly type="text">
+                    </div>
+                    <div class="mb-3">
+                        <label class="d-block mb-1">Ad Soyad</label>
+                        <input asp-for="AdSoyad" value="@Model.AdSoyad" class="d-block w-100 rounded py-1 px-2 bg-white text-muted" readonly type="text">
+                    </div>
+                    <div class="mb-3">
+                        <label class="d-block mb-1">E-posta</label>
+                        <input asp-for="Eposta" value="@Model.Eposta" class="d-block w-100 rounded py-1 px-2 bg-white text-muted" readonly type="text">
+                    </div class="mb-3">
+                    <div class="mb-3">
+                        <label class="d-block mb-1">Telefon No</label>
+                        <input asp-for="Tel" class="d-block w-100 rounded py-1 px-2" type="tel" placeholder="+90 5xx xxx xx xx">
+                        <span asp-validation-for="Tel" class="text-danger"></span>
+                    </div>                   
+                   <div class="mb-3">
+                        <label class="d-block mb-1">Yaş</label>
+                        <input asp-for="Yas" class="d-block w-100 rounded py-1 px-2" type="number" min="18" max="50" placeholder="Yaşınızı giriniz">
+                        <span asp-validation-for="Yas" class="text-danger"></span>
+                    </div>
+                    <button class="btn-guncelle btn btn-success mx-auto d-block" type="submit">Güncelle</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

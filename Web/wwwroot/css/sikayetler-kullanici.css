@@ -1,0 +1,36 @@
+#sikayetler-kullanici-section .iletisim-kisim {
+    background: url("../imgs/iletisim.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+#sikayetler-kullanici-section .layer {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 70px 0;
+}
+
+#sikayetler-kullanici-section .form-kisim {
+    background-color: black;
+}
+
+#sikayetler-kullanici-section .btn-gonder {
+    background-color: var(--primary-color);
+    color: white;
+    width: fit-content;
+    transition: var(--transition);
+}
+
+#sikayetler-kullanici-section .btn-gonder:hover {
+    background-color: white;
+    color: var(--primary-color);
+}
+
+#sikayetler-kullanici-section :where(input, textarea) {
+    outline: 0;
+    border: 0;
+    resize: none;
+}
+
+#sikayetler-kullanici-section {
+    padding: 100px 0;
+}

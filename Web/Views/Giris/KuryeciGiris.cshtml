@@ -1,0 +1,45 @@
+﻿@using Web.Models.KuryeciGiris
+@model UserLogin
+@{
+    Layout = "~/Views/Shared/_LayoutGiris.cshtml";
+}
+
+<section id="giris-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-sm-10 col-md-7 col-lg-6 col-xl-4">
+                <p class="merhaba text-center px-1">
+                    <span class="fw-bold fs-5">Merhaba,</span><br>[şirket adı]sistemine giriş yap
+                </p>
+                <div class="card rounded-0 border-0 p-5">
+                    <div class="form-content p-0">
+                        <h4 class="text-center text-white fw-bold mb-4">Giriş Formu</h4>
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <form asp-controller="Giris" asp-action="KuryeciGiris" class="kurye-form" method="post">
+                            <div class="mb-2">
+                                <label class="form-label text-white">E-posta</label>
+                                <input asp-for="Eposta" type="email" class="w-100 p-1 border-0" />
+                                <span asp-validation-for="Eposta" class="text-danger"></span>
+                            </div>
+                            <label class="form-label text-white">Şifre</label>
+                            <div class="mb-3 position-relative">
+                                <input asp-for="Sifre" type="password" class="w-100 p-1 border-0" />
+                                <button type="button" class="btn btn-link position-absolute end-0 top-0 d-flex mt-1 me-2 text-decoration-none">
+                                    <i class="fa-solid fa-eye" style="color: #6b6b6b;"></i>
+                                </button>
+                                <span asp-validation-for="Sifre" class="text-danger"></span>
+                            </div>
+                            <a asp-controller="Giris" asp-action="KuryeciSifreUnuttum" class="baglanti text-white mb-2 text-end d-block">Şifremi Unuttum</a>
+                            <button type="submit" class="btn-giris btn w-100 my-3 rounded-0">GİRİŞ YAP</button>
+                            <a asp-controller="Giris" asp-action="KuryeOl" class="baglanti text-white text-decoration-none">Hesabınız yok mu?</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

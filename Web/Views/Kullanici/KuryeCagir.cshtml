@@ -1,0 +1,202 @@
+﻿@using Domain.Entities
+@model Kurye
+
+<section id="kuryeOl-form-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-lg-11">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <form asp-controller="Kullanici" asp-action="KuryeCagir" method="post">
+                    <div class="bilgiler">
+                        <!-- Kişisel Bilgiler -->
+                        <div class="mb-4">
+                            <h4 class="sub-title">Kişisel Bilgiler</h4>
+                            <div class="d-flex flex-column flex-lg-row gap-2">
+                                <div class="flex-grow-1">
+                                    <input asp-for="AdSoyad" class="d-block w-100" type="text" placeholder="*Ad Soyad" style="box-sizing: border-box;">
+                                    <span asp-validation-for="AdSoyad" class="text-danger d-block"></span>
+                                </div>
+                                <div class="flex-grow-1">
+                                    <input asp-for="Tel" class="d-block w-100" type="tel" placeholder="*Telefon" style="box-sizing: border-box;">
+                                    <span asp-validation-for="Tel" class="text-danger d-block"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Teslimat Adresi -->
+                        <div class="mb-4">
+                            <h4 class="sub-title">Teslimat Adresi</h4>
+                            <div class="d-lg-flex gap-2">
+                                <!-- İl -->
+                                <div class="dropdown flex-grow-1 mb-2">
+                                    <button class="btn btn-white text-secondary shadow-none w-100 text-start position-relative" type="button" id="ilBtn" data-bs-toggle="dropdown" aria-expanded="false">
+                                        *İl Seç <i class="fa-solid fa-caret-down"></i>
+                                    </button>
+                                    <ul class="dropdown-menu border-0 w-100 py-0" id="ilDropdown">
+                                        <li><a class="dropdown-item" href="#" data-value="Ankara">Ankara</a></li>
+                                        <li><a class="dropdown-item" href="#" data-value="Istanbul">Istanbul</a></li>
+                                        <li><a class="dropdown-item" href="#" data-value="Isparta">Isparta</a></li>
+                                    </ul>
+                                    <select asp-for="Il" id="sehir" class="d-none">
+                                        <option value="">İl Seç</option>
+                                        <option value="Ankara">Ankara</option>
+                                        <option value="Istanbul">Istanbul</option>
+                                        <option value="Isparta">Isparta</option>
+                                    </select>
+                                    <span asp-validation-for="Il" class="text-danger"></span>
+                                </div>
+                                <!-- İlçe -->
+                                <div class="dropdown flex-grow-1 mb-2">
+                                    <button class="btn btn-white text-secondary shadow-none w-100 text-start position-relative" type="button" id="ilceBtn" data-bs-toggle="dropdown" aria-expanded="false">
+                                        *İlçe Seç <i class="fa-solid fa-caret-down"></i>
+                                    </button>
+                                    <ul class="dropdown-menu w-100 py-0" id="ilceDropdown"></ul>
+                                    <input type="hidden" id="ilceHidden" name="Ilce" />
+                                    <span asp-validation-for="Ilce" class="text-danger"></span>
+                                </div>
+                                <!-- Mahalle -->
+                                <div class="dropdown flex-grow-1">
+                                    <button class="btn btn-white text-secondary shadow-none w-100 text-start position-relative" type="button" id="mahalleBtn" data-bs-toggle="dropdown" aria-expanded="false">
+                                        *Mahalle Seç <i class="fa-solid fa-caret-down"></i>
+                                    </button>
+                                    <ul class="dropdown-menu w-100 py-0" id="mahalleDropdown"></ul>
+                                    <input type="hidden" id="mahalleHidden" name="Mahalle" />
+                                    <span asp-validation-for="Mahalle" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <input asp-for="Adres" class="w-100 mt-2" type="text" placeholder="*Adres">
+                            <span asp-validation-for="Adres" class="text-danger"></span>
+                        </div>
+                        <!-- Market Seçimi -->
+                        <div class="mb-4">
+                            <h4 class="sub-title">Alınacak Ürün Bilgileri</h4>
+                            <div class="dropdown mb-2">
+                                <button class="btn btn-white text-secondary shadow-none w-100 text-start position-relative" type="button" id="marketBtn" data-bs-toggle="dropdown" aria-expanded="false">
+                                    *Market Seç <i class="fa-solid fa-caret-down"></i>
+                                </button>
+                                <ul class="dropdown-menu w-100 py-0" id="marketDropdown">
+                                    <li><a class="dropdown-item" href="#" data-value="BIM">BİM</a></li>
+                                    <li><a class="dropdown-item" href="#" data-value="SOK">ŞOK</a></li>
+                                    <li><a class="dropdown-item" href="#" data-value="A101">A101</a></li>
+                                </ul>
+                                <select asp-for="Market" id="market" class="d-none">
+                                    <option value="">Market Seç</option>
+                                    <option value="BIM">BİM</option>
+                                    <option value="SOK">ŞOK</option>
+                                    <option value="A101">A101</option>
+                                </select>
+                                <span asp-validation-for="Market" class="text-danger"></span>
+                            </div>
+                            <div class="d-flex flex-column flex-lg-row gap-2">
+                                <div class="flex-grow-1">
+                                    <textarea asp-for="UrunAdi" class="p-2 w-100 d-block" style="box-sizing: border-box;" rows="4" placeholder="*Ürün Adı ve Miktarı"></textarea>
+                                    <span asp-validation-for="UrunAdi" class="text-danger d-block"></span>
+                                </div>
+                                <div class="flex-grow-1">
+                                    <textarea asp-for="Not" class="p-2 w-100" style="box-sizing: border-box;" rows="4" placeholder="Ekler Ve Notlar"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-devam btn text-white fw-bold px-4 mx-auto d-block mt-4">Devam Et</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- JavaScript -->
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+
+<script>
+    const ilceler = {
+        "Ankara": ["Çankaya", "Keçiören", "Sincan"],
+        "Istanbul": ["Kadıköy", "Beşiktaş", "Üsküdar"],
+        "Isparta": ["Merkez", "Eğirdir", "Yalvaç"]
+    };
+
+    const mahalleler = {
+        "Ankara": {
+            "Çankaya": ["Atatürk Lisesi", "Fen Lisesi"],
+            "Keçiören": ["Mehmet Akif", "Anadolu Lisesi"],
+            "Sincan": ["Sincan Teknik", "Sincan Lisesi"]
+        },
+        "Istanbul": {
+            "Kadıköy": ["Moda Koleji", "Kadıköy Lisesi"],
+            "Beşiktaş": ["Kabataş", "Sakıp Sabancı"],
+            "Üsküdar": ["Ahmet Yesevi", "Üsküdar Lisesi"]
+        },
+        "Isparta": {
+            "Merkez": ["Isparta Anadolu", "Süleyman Demirel Lisesi"],
+            "Eğirdir": ["Eğirdir Lisesi"],
+            "Yalvaç": ["Yalvaç Fen Lisesi"]
+        }
+    };
+
+    document.querySelectorAll("#ilDropdown a").forEach(item => {
+        item.addEventListener("click", function () {
+            const sehir = this.dataset.value;
+            document.getElementById("ilBtn").textContent = sehir;
+            document.getElementById("sehir").value = sehir;
+
+            // Temizleme
+            const ilceDropdown = document.getElementById("ilceDropdown");
+            ilceDropdown.innerHTML = "";
+            document.getElementById("ilceBtn").textContent = "*İlçe Seç";
+            document.getElementById("ilceHidden").value = "";
+
+            const mahalleDropdown = document.getElementById("mahalleDropdown");
+            mahalleDropdown.innerHTML = "";
+            document.getElementById("mahalleBtn").textContent = "*Mahalle Seç";
+            document.getElementById("mahalleHidden").value = "";
+
+            // İlçe yükle
+            if (ilceler[sehir]) {
+                ilceler[sehir].forEach(ilce => {
+                    const li = document.createElement("li");
+                    const a = document.createElement("a");
+                    a.href = "#";
+                    a.className = "dropdown-item";
+                    a.dataset.value = ilce;
+                    a.textContent = ilce;
+                    a.addEventListener("click", function () {
+                        document.getElementById("ilceBtn").textContent = ilce;
+                        document.getElementById("ilceHidden").value = ilce;
+
+                        mahalleDropdown.innerHTML = "";
+                        document.getElementById("mahalleBtn").textContent = "*Mahalle Seç";
+                        document.getElementById("mahalleHidden").value = "";
+
+                        if (mahalleler[sehir][ilce]) {
+                            mahalleler[sehir][ilce].forEach(mahalle => {
+                                const liMah = document.createElement("li");
+                                const aMah = document.createElement("a");
+                                aMah.href = "#";
+                                aMah.className = "dropdown-item";
+                                aMah.dataset.value = mahalle;
+                                aMah.textContent = mahalle;
+                                aMah.addEventListener("click", function () {
+                                    document.getElementById("mahalleBtn").textContent = mahalle;
+                                    document.getElementById("mahalleHidden").value = mahalle;
+                                });
+                                liMah.appendChild(aMah);
+                                mahalleDropdown.appendChild(liMah);
+                            });
+                        }
+                    });
+                    li.appendChild(a);
+                    ilceDropdown.appendChild(li);
+                });
+            }
+        });
+    });
+
+    document.querySelectorAll("#marketDropdown a").forEach(item => {
+        item.addEventListener("click", function () {
+            const market = this.dataset.value;
+            document.getElementById("marketBtn").textContent = market;
+            document.getElementById("market").value = market;
+        });
+    });
+</script>

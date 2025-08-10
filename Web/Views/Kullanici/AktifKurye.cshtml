@@ -1,0 +1,56 @@
+﻿@using Domain.Entities
+@model List<Kuryeci>
+
+<section id="aktif-kurye-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-10 col-lg-8 col-xl-7">
+                <h2 class="text-center fw-bold mb-3">Aktif Kurye</h2>
+                <hr />
+                @foreach (var kuryeci in Model)
+                {
+                    <div class="kurye d-flex align-items-center rounded bg-light py-2 px-3 mb-3">
+                        <div class="avatar-cont bg-white position-relative me-3">
+                            <img class="avatar w-100" src="@kuryeci.ImageSrc" alt="avatar">
+                        </div>
+                        <div>
+                            <h6>@kuryeci.AdSoyad</h6>
+                            <p class="mb-0">⭐⭐⭐</p>
+                        </div>
+                        <a href="/Kullanici/Cagir?kuryeciTC=@kuryeci.TC" class="btn-cagir btn ms-auto px-2 px-md-3">Çağır</a>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<style>
+    .swal-custom-success-button {
+        background-color: green !important;
+        color: white !important;
+        border: none !important;
+    }
+</style>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <script type="text/javascript">
+            Swal.fire({
+                icon: 'success',
+                title: 'Başarılı!',
+                html: '@Html.Raw(TempData["SuccessMessage"])',
+                confirmButtonText: 'Tamam',
+                customClass: {
+                    confirmButton: 'swal-custom-success-button'
+                }
+            });
+        </script>
+    }
+}
+

@@ -1,0 +1,53 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutGiris.cshtml";
+}
+
+<section id="sikayetler-kullanici-section" class="bg-light">
+    <div class="container">
+        <div class="row gx-0">
+            <div class="col-12 col-lg-6">
+                <div class="iletisim-kisim">
+                    <div class="layer px-4 py-5">
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <img src="~/imgs/clipboard.svg" alt="img" width="60">
+                            <p class="text-white mb-0">Şikayetiniz kayıt altına alınır ve incelenir.</p>
+                        </div>
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <img src="~/imgs/clock.svg" alt="img" width="60">
+                            <p class="text-white mb-0">En geç 24 saat içinde size geri dönüş yapılır.</p>
+                        </div>
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <img src="~/imgs/shield.svg" alt="img" width="60">
+                            <p class="text-white mb-0">Tüm bilgileriniz gizli tutulur.</p>
+                        </div>
+                        <div class="d-flex align-items-center gap-3">
+                            <img src="~/imgs/headset.svg" alt="img" width="60">
+                            <p class="text-white mb-0">Destek için bize 7/24 ulaşabilirsiniz.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-6">
+                <div class="form-kisim py-5 px-4 px-md-5 h-100">
+                    <div id="loginWarning" class="alert alert-success d-none">
+                        Lütfen şikayet göndermek için giriş yapınız.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    <script>
+        // Kullanıcının giriş yapma durumu (örnek; sunucudan dinamik olarak alınabilir)
+        var isLoggedIn = false; // Bu değer gerçek durumda server tarafından set edilmelidir
+
+        window.addEventListener('DOMContentLoaded', () => {
+            if (!isLoggedIn) {
+                const warningBox = document.getElementById("loginWarning");
+                warningBox.classList.remove("d-none");
+            }
+        });
+    </script>
+}

@@ -1,0 +1,111 @@
+﻿@using Application.DTOs
+@model List<SiparislerAdminListDto>
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<section id="siparis-listesi-section" style="padding:70px 0;">
+    <div class="container">
+        @if (Model.Count != 0)
+        {
+            <div class="row justify-content-center">
+                <div class="col-12 col-xl-11">
+                    <h2 class="mb-4 text-center">Sipariş Raporu</h2>
+                </div>
+                <div class="col-12 col-xl-11" style="overflow-x:auto;">
+                    <div style="text-align:end">
+                        <a id="PdfButton" class="btn mb-3" asp-action="SiparisPdfTum" asp-controller="Admin" target="_blank">
+                            Tüm Siparişleri PDF Olarak İndir
+                        </a>
+                    </div>
+                    <table class="table table-bordered table-striped text-center">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>Sipariş ID</th>
+                                <th>Kullanıcı</th>
+                                <th>Kuryeci</th>
+                                <th>Ürün</th>
+                                <th>Durum</th>
+                                <th>Teslim Durumu</th>
+                                <th>Sipariş Tarihi</th>
+                                <th>Teslim Tarihi</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var siparis in Model)
+                            {
+                                <tr>
+                                    <td>@siparis.SiparisId</td>
+                                    <td>@siparis.KullaniciAdSoyad</td>
+                                    <td>@siparis.KuryeciAdSoyad</td>
+                                    <td>@siparis.UrunAdi</td>
+                                    @if (siparis.Durum == "Aktif")
+                                    {
+                                        <td>Kuryeci Tarafından Kabul Edildi</td>
+                                        <td>@siparis.TeslimDurumu</td>
+                                        <td>@siparis.SiparisTarihi.ToString("dd.MM.yyyy HH:mm")</td>
+                                        if (siparis.TeslimDurumu == "Teslim Edilmedi")
+                                        {
+                                            <td class="text-center">------</td>
+                                        }
+                                        else
+                                        {
+                                            <td>@siparis.TeslimTarihi.ToString("dd.MM.yyyy HH:mm")</td>
+                                        }
+                                    }
+                                    else
+                                    {
+                                        <td>Kuryeci Tarafından Henüz Kabul Edilmedi</td>
+                                        <td class="text-center">------</td>
+                                        <td>@siparis.SiparisTarihi.ToString("dd.MM.yyyy HH:mm")</td>
+                                        <td class="text-center">------</td>
+                                    }
+                                    <td>
+                                        <a id="PDF-Indir" href="/Admin/SiparisPdf?id=@siparis.SiparisId" class="btn btn-sm">PDF İndir</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="row justify-content-center">
+                <div class="col-12 col-xl-11">
+                    <h5 class="text-center mb-0 py-5">Sistemde henüz bir sipariş bulunmamaktadır.</h5>
+                </div>
+            </div>
+        }
+    </div>
+</section>
+
+<style>
+    #siparis-listesi-section h2 {
+        font-family: "Jockey One", sans-serif;
+        font-size: calc(2rem + 1vw);
+        letter-spacing: 1px;
+    }
+
+    #PdfButton {
+        color: #fff;
+        background-color: #0a9869;
+    }
+
+    #PdfButton:hover {
+        color: #fff;
+        background-color: #1da376;
+    }
+
+    #PDF-Indir {
+        color: #fff;
+        background-color: #0a9869;
+    }
+
+    #PDF-Indir:hover {
+        color: #fff;
+        background-color: #1da376;
+    }
+</style>

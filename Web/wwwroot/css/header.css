@@ -1,0 +1,77 @@
+:root {
+--primary-color: #0a9869;
+--transition: all 0.3s ease-in-out;
+}
+
+body {
+font-family: 'Poppins', sans-serif;
+box-sizing : border-box;
+}
+
+header {
+background-color: black;
+}
+
+header .navbar-brand:focus {
+    outline: 0 !important;
+}
+
+header .navbar .nav-link {
+    font-size: 1.05rem;
+    color: white !important;
+}
+
+header .nav-link:hover {
+    color: var(--primary-color) !important;
+}
+
+header .btn-kuryeCagir {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: 500;
+    border: 1px solid var(--primary-color);
+    transition: var(--transition);
+}
+
+header .btn-kuryeCagir:hover {
+    background-color: white !important;
+    color: var(--primary-color) !important;
+    border: 1px solid var(--primary-color);
+}
+
+header .btn-giris, header .btn-cikis {
+    background-color: var(--primary-color) !important;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    padding : 0;
+    border : 0;
+}
+
+
+header .btn-giris:hover, header .btn-cikis:hover {
+    background-color: white !important;            
+}
+header .btn-giris:hover i, header .btn-cikis:hover i {
+    color: var(--primary-color) !important;
+}
+
+header .dropdown-center .dropdown-item:focus {
+    background-color: white !important;
+    color: black !important;
+}
+
+header .btn-evet:hover{
+    color: white !important;
+}
+
+header .dropdown-menu{
+    position: absolute !important;
+    left:50% !important;
+    top: 43px !important;
+    transform: translateX(-50%) !important;
+}
+
+header .offcanvas-end {
+    width: 300px !important;
+}

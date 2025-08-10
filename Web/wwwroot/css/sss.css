@@ -1,0 +1,31 @@
+#sss-section {
+    padding: 70px 0;
+}
+
+#sss-section h2 {
+    font-family: "Jockey One", sans-serif;
+    font-size: calc(2rem + 1vw);
+    letter-spacing: 1px;
+}
+
+#sss-section .accordion-button:not(.collapsed) {
+    background-color: #eee !important;
+}
+
+#sss-section .accordion-item button {
+    font-size: 1.1rem;
+}
+
+#sss-section .accordion-item button:hover {
+    background-color: #eee;
+}
+
+#sss-section .accordion-item button:focus {
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+#sss-section .accordion-body {
+    color: gray;
+    font-size: 0.9rem;
+}

@@ -1,0 +1,285 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Web
+build_property.RootNamespace = Web
+build_property.ProjectDir = C:\Users\Abdulrahman\Desktop\Kurye24\Web\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\Abdulrahman\Desktop\Kurye24\Web
+build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 8.0
+build_property.EnableCodeStyleSeverity = 
+
+[C:/Users/Abdulrahman/Desktop/Kurye24/Web/Views/Admin/Anasayfa.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQW5hc2F5ZmEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdulrahman/Desktop/Kurye24/Web/Views/Admin/GizlilikPolitikasi.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cR2l6bGlsaWtQb2xpdGlrYXNpLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdulrahman/Desktop/Kurye24/Web/Views/Admin/IstekDetay.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSXN0ZWtEZXRheS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdulrahman/Desktop/Kurye24/Web/Views/Admin/IsteklerAdmin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSXN0ZWtsZXJBZG1pbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdulrahman/Desktop/Kurye24/Web/Views/Admin/KabulKuryeciDetay.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cS2FidWxLdXJ5ZWNpRGV0YXkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdulrahman/Desktop/Kurye24/Web/Views/Admin/KabulKuryecilerAdmin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cS2FidWxLdXJ5ZWNpbGVyQWRtaW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdulrahman/Desktop/Kurye24/Web/Views/Admin/KullaniciRaporu.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cS3VsbGFuaWNpUmFwb3J1LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdulrahman/Desktop/Kurye24/Web/Views/Admin/KullanimKosullari.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cS3VsbGFuaW1Lb3N1bGxhcmkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdulrahman/Desktop/Kurye24/Web/Views/Admin/RedKuryeciDetay.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUmVkS3VyeWVjaURldGF5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdulrahman/Desktop/Kurye24/Web/Views/Admin/SikayetlerAdmin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cU2lrYXlldGxlckFkbWluLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdulrahman/Desktop/Kurye24/Web/Views/Admin/SiparisRaporu.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cU2lwYXJpc1JhcG9ydS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdulrahman/Desktop/Kurye24/Web/Views/Admin/SSS.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cU1NTLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdulrahman/Desktop/Kurye24/Web/Views/Admin/Yardim.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cWWFyZGltLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdulrahman/Desktop/Kurye24/Web/Views/Giris/AdminGiris.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2lyaXNcQWRtaW5HaXJpcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdulrahman/Desktop/Kurye24/Web/Views/Giris/Anasayfa.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2lyaXNcQW5hc2F5ZmEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdulrahman/Desktop/Kurye24/Web/Views/Giris/GizlilikPolitikasi.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2lyaXNcR2l6bGlsaWtQb2xpdGlrYXNpLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdulrahman/Desktop/Kurye24/Web/Views/Giris/Hakkimizda.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2lyaXNcSGFra2ltaXpkYS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdulrahman/Desktop/Kurye24/Web/Views/Giris/KullaniciGiris.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2lyaXNcS3VsbGFuaWNpR2lyaXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdulrahman/Desktop/Kurye24/Web/Views/Giris/KullaniciSifreUnuttum.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2lyaXNcS3VsbGFuaWNpU2lmcmVVbnV0dHVtLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdulrahman/Desktop/Kurye24/Web/Views/Giris/KullaniciUye.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2lyaXNcS3VsbGFuaWNpVXllLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdulrahman/Desktop/Kurye24/Web/Views/Giris/KullanimKosullari.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2lyaXNcS3VsbGFuaW1Lb3N1bGxhcmkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdulrahman/Desktop/Kurye24/Web/Views/Giris/KuryeciGiris.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2lyaXNcS3VyeWVjaUdpcmlzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdulrahman/Desktop/Kurye24/Web/Views/Giris/KuryeciSifreUnuttum.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2lyaXNcS3VyeWVjaVNpZnJlVW51dHR1bS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdulrahman/Desktop/Kurye24/Web/Views/Giris/KuryeOl.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2lyaXNcS3VyeWVPbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdulrahman/Desktop/Kurye24/Web/Views/Giris/SikayetlerGiris.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2lyaXNcU2lrYXlldGxlckdpcmlzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdulrahman/Desktop/Kurye24/Web/Views/Giris/SiparislerimGiris.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2lyaXNcU2lwYXJpc2xlcmltR2lyaXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdulrahman/Desktop/Kurye24/Web/Views/Giris/SSS.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2lyaXNcU1NTLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdulrahman/Desktop/Kurye24/Web/Views/Giris/Yardim.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2lyaXNcWWFyZGltLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdulrahman/Desktop/Kurye24/Web/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdulrahman/Desktop/Kurye24/Web/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdulrahman/Desktop/Kurye24/Web/Views/Kullanici/AktifKurye.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS3VsbGFuaWNpXEFrdGlmS3VyeWUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdulrahman/Desktop/Kurye24/Web/Views/Kullanici/Anasayfa.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS3VsbGFuaWNpXEFuYXNheWZhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdulrahman/Desktop/Kurye24/Web/Views/Kullanici/Chat.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS3VsbGFuaWNpXENoYXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdulrahman/Desktop/Kurye24/Web/Views/Kullanici/GizlilikPolitikasi.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS3VsbGFuaWNpXEdpemxpbGlrUG9saXRpa2FzaS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdulrahman/Desktop/Kurye24/Web/Views/Kullanici/Hakkimizda.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS3VsbGFuaWNpXEhha2tpbWl6ZGEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdulrahman/Desktop/Kurye24/Web/Views/Kullanici/KullanimKosullari.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS3VsbGFuaWNpXEt1bGxhbmltS29zdWxsYXJpLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdulrahman/Desktop/Kurye24/Web/Views/Kullanici/KuryeCagir.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS3VsbGFuaWNpXEt1cnllQ2FnaXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdulrahman/Desktop/Kurye24/Web/Views/Kullanici/Profil.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS3VsbGFuaWNpXFByb2ZpbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdulrahman/Desktop/Kurye24/Web/Views/Kullanici/SikayetlerKullanici.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS3VsbGFuaWNpXFNpa2F5ZXRsZXJLdWxsYW5pY2kuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdulrahman/Desktop/Kurye24/Web/Views/Kullanici/SiparisDetayKullanici.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS3VsbGFuaWNpXFNpcGFyaXNEZXRheUt1bGxhbmljaS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdulrahman/Desktop/Kurye24/Web/Views/Kullanici/SiparislerimKullanici.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS3VsbGFuaWNpXFNpcGFyaXNsZXJpbUt1bGxhbmljaS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdulrahman/Desktop/Kurye24/Web/Views/Kullanici/SSS.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS3VsbGFuaWNpXFNTUy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdulrahman/Desktop/Kurye24/Web/Views/Kullanici/Yardim.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS3VsbGFuaWNpXFlhcmRpbS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdulrahman/Desktop/Kurye24/Web/Views/Kuryeci/Anasayfa.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS3VyeWVjaVxBbmFzYXlmYS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdulrahman/Desktop/Kurye24/Web/Views/Kuryeci/Chat.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS3VyeWVjaVxDaGF0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdulrahman/Desktop/Kurye24/Web/Views/Kuryeci/GizlilikPolitikasi.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS3VyeWVjaVxHaXpsaWxpa1BvbGl0aWthc2kuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdulrahman/Desktop/Kurye24/Web/Views/Kuryeci/Hakedis.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS3VyeWVjaVxIYWtlZGlzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdulrahman/Desktop/Kurye24/Web/Views/Kuryeci/Hakkimizda.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS3VyeWVjaVxIYWtraW1pemRhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdulrahman/Desktop/Kurye24/Web/Views/Kuryeci/KullanimKosullari.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS3VyeWVjaVxLdWxsYW5pbUtvc3VsbGFyaS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdulrahman/Desktop/Kurye24/Web/Views/Kuryeci/PasifSiparislerKuryeci.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS3VyeWVjaVxQYXNpZlNpcGFyaXNsZXJLdXJ5ZWNpLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdulrahman/Desktop/Kurye24/Web/Views/Kuryeci/Profil.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS3VyeWVjaVxQcm9maWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdulrahman/Desktop/Kurye24/Web/Views/Kuryeci/SiparisDetay.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS3VyeWVjaVxTaXBhcmlzRGV0YXkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdulrahman/Desktop/Kurye24/Web/Views/Kuryeci/SiparislerimKuryeci.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS3VyeWVjaVxTaXBhcmlzbGVyaW1LdXJ5ZWNpLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdulrahman/Desktop/Kurye24/Web/Views/Kuryeci/SSS.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS3VyeWVjaVxTU1MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdulrahman/Desktop/Kurye24/Web/Views/Kuryeci/TeslimEdilenSiparisDetay.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS3VyeWVjaVxUZXNsaW1FZGlsZW5TaXBhcmlzRGV0YXkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdulrahman/Desktop/Kurye24/Web/Views/Kuryeci/Yardim.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS3VyeWVjaVxZYXJkaW0uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdulrahman/Desktop/Kurye24/Web/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdulrahman/Desktop/Kurye24/Web/Views/Shared/_LayoutGiris.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRHaXJpcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdulrahman/Desktop/Kurye24/Web/Views/Shared/_LayoutKuryeci.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRLdXJ5ZWNpLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdulrahman/Desktop/Kurye24/Web/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdulrahman/Desktop/Kurye24/Web/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdulrahman/Desktop/Kurye24/Web/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdulrahman/Desktop/Kurye24/Web/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-lzldzk1rll
+
+[C:/Users/Abdulrahman/Desktop/Kurye24/Web/Views/Shared/_LayoutAdmin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRBZG1pbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = b-dpddaa3nch

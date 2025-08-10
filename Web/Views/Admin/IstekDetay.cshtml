@@ -1,0 +1,140 @@
+﻿@using Domain.Entities
+@model Kuryeci
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<section id="istek-detay-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-10 col-lg-8 col-xl-5">
+                <div class="px-3 py-5 border border-1 rounded shadow-sm">
+                    <form action="">
+                        <div class="mb-4">
+                            <h4 class="mb-3">Aday Bilgileri</h4>
+                            <div class="mb-2 d-flex flex-column flex-sm-row">
+                                <label>Ad Soyad:</label>
+                                <input asp-for="AdSoyad" class="flex-fill" type="text" readonly>
+                            </div>
+                            <div class="mb-2 d-flex flex-column flex-sm-row">
+                                <label>TC Kimlik No:</label>
+                                <input  asp-for="TC" class="flex-fill" type="text" readonly>
+                            </div>
+                            <div class="mb-2 d-flex flex-column flex-sm-row">
+                                <label>Yaş:</label>
+                                <input asp-for="Yas" class="flex-fill" type="text" readonly>
+                            </div>
+                            <div class="mb-2 d-flex flex-column flex-sm-row">
+                                <label>Cinsiyet:</label>
+                                <input asp-for="Cinsiyet" class="flex-fill" type="text" readonly>
+                            </div>
+                            <div class="mb-2 d-flex flex-column flex-sm-row">
+                                <label>Telefon Numarası:</label>
+                                <input asp-for="Tel" class="flex-fill" type="text" readonly>
+                            </div>
+                            <div class="mb-2 d-flex flex-column flex-sm-row">
+                                <label>E-posta:</label>
+                                <input asp-for="Eposta" class="flex-fill" type="text" readonly>
+                            </div>
+                            <div class="mb-2 d-flex flex-column flex-sm-row">
+                                <label>İl:</label>
+                                <input asp-for="IkametIl" class="flex-fill" type="text" readonly>
+                            </div>
+                            <div class="mb-2 d-flex flex-column flex-sm-row">
+                                <label>İlçe:</label>
+                                <input asp-for="IkametIlce" class="flex-fill" type="text" readonly>
+                            </div>
+                            <div class="mb-2 d-flex flex-column flex-sm-row">
+                                <label>Mahalle:</label>
+                                <input asp-for="IkametMahalle" class="flex-fill" type="text" readonly>
+                            </div>
+                            <div class="mb-2 d-flex flex-column flex-sm-row">
+                                <label>Adres:</label>
+                                <input asp-for="IkametAdres" class="flex-fill" type="text" readonly>
+                            </div>
+                            <div class="mb-2 d-flex flex-column flex-sm-row">
+                                <label>Çalışacak İlçe:</label>
+                                <input asp-for="CalisacakIlce" class="flex-fill" type="text" readonly>
+                            </div>
+                            <div class="mb-2 d-flex flex-column flex-sm-row">
+                                <label>Ehliyet:</label>
+                                <input asp-for="EhliyetTipi" class="flex-fill" type="text" readonly>
+                            </div>
+                            <div class="mb-2 d-flex flex-column flex-sm-row">
+                                <label>İzin Günü:</label>
+                                <input asp-for="IzinGunu" class="flex-fill" type="text" readonly>
+                            </div>
+                        </div>
+                        <div class="d-flex gap-2 justify-content-center">
+                            <button type="button" class="btn-reddet btn btn-danger px-3 border-0 d-block" data-kuryeci-id="@Model.Id">Reddet</button>
+                            <a class="btn-onayla btn btn-success px-3 border-0 d-block" href="/Admin/SifreUret?kuryeciId=@Model.Id">Onayla</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+            //Reddet butonu
+            document.addEventListener("DOMContentLoaded", function () {
+            const redButton = document.querySelector(".btn-reddet");
+            if (redButton) {
+                redButton.addEventListener("click", function (event) {
+                    const kuryeciId = this.getAttribute("data-kuryeci-id");
+
+                    Swal.fire({
+                        title: 'Reddetme Sebebi',
+                        input: 'text',
+                        inputLabel: 'Lütfen reddetme sebebini giriniz:',
+                        inputPlaceholder: 'Sebep girin...',
+                        inputValidator: (value) => {
+                            if (!value) {
+                                return 'Sebep girmelisiniz!';
+                            }
+                        },
+                        showCancelButton: true,
+                        confirmButtonText: 'Reddet',
+                        cancelButtonText: 'İptal',
+                        confirmButtonColor: '#d33',
+                        cancelButtonColor: '#3085d6'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            const reason = encodeURIComponent(result.value);
+                            window.location.href = `/Admin/IstekRed?kuryeciId=${kuryeciId}&sebep=${reason}`;
+                        }
+                    });
+                });
+            }
+        });
+        document.addEventListener("DOMContentLoaded", function () {
+            // Onayla butonu
+            const onayButton = document.querySelector(".btn-onayla");
+
+            if (onayButton) {
+                onayButton.addEventListener("click", function (event) {
+                    event.preventDefault();
+                    const href = this.getAttribute("href");
+
+                    Swal.fire({
+                        title: 'Kuryeciyi onaylamak istediğinize emin misiniz?',
+                        text: "Onaylandıktan sonra şifre üretilecektir.",
+                        icon: 'question',
+                        showCancelButton: true,
+                        confirmButtonColor: '#28a745',
+                        cancelButtonColor: '#6c757d',
+                        confirmButtonText: 'Evet, onayla',
+                        cancelButtonText: 'Vazgeç'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            window.location.href = href;
+                        }
+                    });
+                });
+            }
+        });
+    </script>
+}

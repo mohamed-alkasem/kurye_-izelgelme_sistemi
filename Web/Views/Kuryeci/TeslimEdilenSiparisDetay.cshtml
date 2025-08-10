@@ -1,0 +1,55 @@
+﻿@using Domain.Entities
+@model Kurye
+@{
+    Layout = "~/Views/Shared/_LayoutKuryeci.cshtml";
+}
+
+<section id="siparis-detay-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-10 col-lg-8 col-xl-6">
+                <div class="px-3 py-5 border border-1 bg-light rounded">
+                    <h3 class="text-center mb-3">Sipariş Detayları</h3>
+                    <form asp-controller="Kuryeci" asp-action="SiparisDetay" method="post">
+                        <input type="hidden" asp-for="Id" />
+                        <div class="mb-2 d-flex flex-column flex-sm-row">
+                            <label>Alıcı Adı:</label>
+                            <input asp-for="AdSoyad" class="flex-fill" type="text" readonly>
+                        </div>
+                        <div class="mb-2 d-flex flex-column flex-sm-row">
+                            <label>Telefon Numarası:</label>
+                            <input asp-for="Tel" class="flex-fill" type="text" readonly>
+                        </div>
+                        <div class="mb-2 d-flex flex-column flex-sm-row">
+                            <label>Tam Adresi:</label>
+                            <input asp-for="Adres" class="flex-fill" type="text" readonly>
+                        </div>
+                        <div class="mb-2 d-flex flex-column flex-sm-row">
+                            <label>Market Adı:</label>
+                            <input asp-for="Market" class="flex-fill" type="text" readonly>
+                        </div>
+                        <div class="mb-2 d-flex flex-column flex-sm-row">
+                            <label>Ürün Adı Ve Miktarı:</label>
+                            <input asp-for="UrunAdi" class="flex-fill" type="text" readonly>
+                        </div>
+                        <div class="mb-2 d-flex flex-column flex-sm-row">
+                            <label>Ek Notlar:</label>
+                            <input asp-for="Not" class="flex-fill" type="text" readonly>
+                        </div>
+                        <div class="mb-2 d-flex flex-column flex-sm-row">
+                            <label>Sipariş Tarihi:</label>
+                            <input value="@Model.SiparisTarihi.ToString("dd.MM.yyyy HH:mm")" class="flex-fill" type="text" readonly>
+                        </div>
+                        <div class="mb-2 d-flex flex-column flex-sm-row">
+                            <label>Teslim Tarihi:</label>
+                            <input value="@Model.TeslimTarihi.ToString("dd.MM.yyyy HH:mm")" class="flex-fill" type="text" readonly>
+                        </div>
+                        <div class="d-flex justify-content-center gap-2 mt-3">
+                            <a asp-controller="Kuryeci" asp-action="SiparislerimKuryeci" class="btn btn-secondary px-3 border-0">Geri</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
